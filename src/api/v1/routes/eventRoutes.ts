@@ -15,14 +15,14 @@ router.get("/health", (req, res) => {
 })
 
 router.get("/events", (req, res) => {
-    res.json(sampleEventData)
+    res.status(HTTP_STATUS.OK).json(sampleEventData)
 })
 
 router.get("/events/:id", (req, res) => {
     const id = Number(req.params.id)
     const event = sampleEventData.find((item) => item.id === id)
 
-    return res.json(event)
+    return res.status(HTTP_STATUS.OK).json(event)
 
 })
 
@@ -53,7 +53,7 @@ router.get("/events/:id/popularity", (req, res) => {
     }else {
         Tier = "New"
     }
-    return res.json({...event, popularityScore, Tier})
+    return res.status(HTTP_STATUS.OK).json({...event, popularityScore, Tier})
 })
 
 export default router
