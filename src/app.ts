@@ -1,11 +1,9 @@
 import express from "express";
+import eventRoutes from "./api/v1/routes/eventRoutes.js"
 
 const app = express();
 
 app.use(express.json());
-
-app.get("/api/v1/health", (req, res) => {
-  res.json({ status: "ok" });
-});
+app.use("/api/v1", eventRoutes)
 
 export default app;
