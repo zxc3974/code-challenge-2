@@ -1,4 +1,5 @@
 import { Router } from "express";
+import {sampleEventData} from "../services/eventService.js"
 
 const router = Router()
 
@@ -12,7 +13,7 @@ router.get("/health",(req,res)=>{
 })
 
 router.get("/events", (req,res)=>{
-    res.json()
+    res.json(sampleEventData)
 })
 
 export default router

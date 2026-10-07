@@ -1,8 +1,8 @@
-import { Event } from "../types/event"
-import { Attendee } from "../types/attendee"
+import { Event } from "../types/event.js"
+import { Attendee } from "../types/attendee.js"
 
 
-const sampleEventData: Event[] = [
+export const sampleEventData: Event[] = [
     {
         id: 1,
         name: "Tech Conference 2025",
